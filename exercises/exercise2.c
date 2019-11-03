@@ -48,7 +48,7 @@ int clock_ms() {
 		return ret;
 	}
 	want.tv_nsec += 1e6;
-	if (want.tv_nsec >= 1e9) {
+	if (want.tv_nsec >= 1e9) { //IF Nanosekundenüberlauf/Sekundenwechsel
 		want.tv_sec += 1;
 		want.tv_nsec -= 1e9;
 	}
