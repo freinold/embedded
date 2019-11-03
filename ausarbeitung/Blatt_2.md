@@ -1,6 +1,6 @@
 # Blatt 2
-##a)
-###Code:
+## a)
+### Code:
 ```c
 int clock_ms() {
  	struct timespec want;
@@ -25,7 +25,7 @@ int clock_ms() {
  wird dieser anschließend ausgeglichen.
 Mit diesem timespec struct als Parameter wird clock_nanosleep aufgerfuen.
 
-####Überprüfung der Uhr
+#### Überprüfung der Uhr
 ```c
 int test_clock_ms() {
 	struct timespec want, is;
@@ -59,8 +59,8 @@ int test_clock_ms() {
  gelegentlich geringe Abweichugen. Die Abweichungen kommen warscheinlich von der Ausnahmebehandlung
  von Sekundenübergängen.
      
-##b)
-###Code:
+## b)
+### Code:
 ```c
 int changeSystemTick( unsigned int microsecs ){
 	struct _clockperiod old, new;
