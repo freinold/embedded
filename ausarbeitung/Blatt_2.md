@@ -77,7 +77,7 @@ int changeSystemTick( unsigned int microsecs ){
 
  ```
  Mit changeSystemTick() der Systemtakt auf bis zu minimal 10 Mikrosekunden eingestellt werden. Dafür 
- nutzt die Funktion ClockPeriod_r(). ClockPeriod_r() gibt auserdem den alten Systemtakt aus.
+ nutzt die Funktion ClockPeriod_r(). ClockPeriod_r() gibt auserdem den alten Systemtakt(1 ms) aus.
  Dieser wird am Ende der Funktion zusammen mit dem neuen Systemtakt ausgegeben.
  Auswirkungen auf a):
  Bei einer Verlangsamung des Systemtaktes unter den Standardtakt  wird die Uhr um den Faktor der Verlangsamung langsamer.
