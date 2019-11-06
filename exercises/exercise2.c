@@ -9,7 +9,7 @@ int changeSystemTick(unsigned int microsecs);
 int test_clock_ms();
 
 int main(int argc, char *argv[]) {
-	changeSystemTick(10);
+	changeSystemTick(1e3);
 	test_clock_ms();
 	return 0;
 }

@@ -1,1 +1,1 @@
-#include "exercises/exercise2.c"
+#include "exercises/exercise3.c"
