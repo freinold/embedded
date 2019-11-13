@@ -5,6 +5,7 @@
 #include <sys/neutrino.h>
 #include <pthread.h>
 #include <sched.h>
+#include <unistd.h>
 
 int waste_msecs( unsigned int msecs );
 int measure_waste_msecs();
@@ -13,7 +14,7 @@ void* thread_waste_msecs();
 
 int main(int argc, char *argv[]) {
 	//To get a more precise clock.
-	changeSystemTick(10);
+	changeSystemTick(1e3);
 	pthread_attr_t attr;
 	pthread_t id;
 	struct sched_param sched_params;
@@ -51,6 +52,11 @@ int main(int argc, char *argv[]) {
 		printf("pthread_join: %s\n", strerror(ret));
 		exit(-1);
 	}
+	printf("Low prio thread:\n");
+	int i;
+	for(i = 0; i < 10; i++) {
+		measure_waste_msecs();
+	}
 	return 0;
 }
 
@@ -67,6 +73,7 @@ void* thread_waste_msecs( void* args ) {
 	int i;
 	for(i = 0; i < 10; i++) {
 		measure_waste_msecs();
+		usleep(10000);
 	}
 	pthread_exit(0);
 }
@@ -74,7 +81,7 @@ void* thread_waste_msecs( void* args ) {
 int waste_msecs( unsigned int msecs ) {
 	long long i;
 	double x, y, z, p;
-	for(i = 0; i < msecs * 5000 ; i++)  {
+	for(i = 0; i < msecs * 5881 ; i++)  {
 		x = 999999.99999;
 		y = 222.645330;
 		z = 0.1143839834;
