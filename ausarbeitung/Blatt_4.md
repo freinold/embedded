@@ -1,5 +1,5 @@
-#Blatt 4
-##Code:
+# Blatt 4
+## Code:
 ```c
 #include <unistd.h>
 #include <semaphore.h>
@@ -126,7 +126,7 @@ int waste_msecs( unsigned int msecs ) {
 }
 
  ```
- ##Erläuterung
+ ## Erläuterung
  Task1 wartet und arbeitet(mit waste_msecs aus Blatt 3) jeweils 2 ms. Nach Jeder 3. Ausfürung dieser
  Aufgaben erhöht der Task außerdem die Semaphore auf die Thread 2 wartet.
  Task2 wartet auf die von Task1 erhöte Semaphore und arbeitet wenn er diese erhält für 3 ms.
@@ -136,7 +136,7 @@ int waste_msecs( unsigned int msecs ) {
   Außerdem solltendie Prioritäten aller Threads  höher als 21(Die höhste andere Priorität auf dem BBB)
   sein um eine ununterbrochne Ausfürung zu erreichen
   
- ##Code Aufgabe a)
+ ## Code Aufgabe a)
  ```c
  #include <unistd.h>
  #include <semaphore.h>
@@ -316,7 +316,7 @@ int waste_msecs( unsigned int msecs ) {
  }
 
   ```
-##Erläuterung
+## Erläuterung
 In dieser Aufgabe  erhält Task 1 seinen Takt nicht durch schlafen mit usleep(2) sondern durch einen Timer und dazugehörigen 
 Handler. Der Handler der das Signal SIGALRM bedient erhöt eine Semaphore um Task 1 wieder aufzuwecken.
 Der Handler der die Priorität des Main Threads hat muss die höchste Priorität haben.
