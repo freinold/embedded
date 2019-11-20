@@ -14,11 +14,11 @@ char calculate( char c){
 	char led1 = c & 0x01;
 	char led2 = c & 0x02;
 	//calculate leds
-	led2 = led2 >>1;
+	led2 = led2 >> 1;
 	char led3 = led1 ^ led2;
 	char led4 = led1 | led2;
 	//put all the bits into result
-	c =  c | (led3 << 2) | (led4 << 3);
+	c =  (led4 << 3) | (led3 << 2) | c;
 	return c;
 
 }
